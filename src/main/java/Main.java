@@ -6,7 +6,7 @@ import zero.ui.Column;
 
 public class Main extends App {
 
-    private int count = 0;
+    private long count = 0;
     @Override public void settings() {
         title("Counter App");
         size(400, 250);
@@ -19,6 +19,7 @@ public class Main extends App {
         Button plus = new Button("+");
         Button minus = new Button("-");
         Button reset = new Button("Reset");
+        Button multiplyTwo = new Button("x2");
 
         plus.onClick(() -> {
             count++;
@@ -35,7 +36,12 @@ public class Main extends App {
             counterLabel.setText("Count: " + count);
         });
 
-        Row buttons = new Row(10, minus, reset, plus);
+        multiplyTwo.onClick(() -> {
+            count *= 2;
+            counterLabel.setText("Count: " + count);
+        });
+
+        Row buttons = new Row(10, minus, reset, plus, multiplyTwo);
 
         show(new Column(10, counterLabel, buttons));
     }
