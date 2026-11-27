@@ -15,6 +15,8 @@ public class Main extends App {
 
     public void setup() {
         Label counterLabel = new Label("Count: 0");
+        Label textNote = new Label("Press - to minus 1 | Press + to add 1 | Press x2 to multiply 2");
+        Label textNote2 = new Label("Press Reset to change counter to 0");
 
         Button plus = new Button("+");
         Button minus = new Button("-");
@@ -43,7 +45,7 @@ public class Main extends App {
 
         Row buttons = new Row(10, minus, reset, plus, multiplyTwo);
 
-        show(new Column(10, counterLabel, buttons));
+        show(new Column(10, counterLabel, buttons, textNote, textNote2));
     }
     public static void main(String[] args) { launch(args); }
 }
